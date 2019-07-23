@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>R Documentation - freeCodeCamp</title>
+
+    <link rel="stylesheet" href="main.css" />
+    <link rel="icon" href="images/favicon.png" />
+  </head>
+
+  <body>
+    <nav id="navbar">
+      <header id="nav-head">R Documentation</header>
+      <ul>
+        <li><a href="#Introduction" class="nav-link">Introduction</a></li>
+        <li><a href="#qif" class="nav-link">qif</a></li>
+        <li><a href="#vctrs" class="nav-link">vctrs</a></li>
+        <li><a href="#ggplot2" class="nav-link">ggplot2</a></li>
+        <li><a href="#tidyverse" class="nav-link">tidyverse</a></li>
+        <li><a href="#Reference" class="nav-link">Reference</a></li>
+      </ul>
+    </nav>
+
+    <main id="main-doc">
+      <section class="main-section" id="Introduction">
+        <header>Introduction</header>
+
+        <article>
+          <p>R is a language and environment for statistical computing and graphics. It is a GNU project which is similar to the S language and environment which was developed at Bell Laboratories (formerly AT&T, now Lucent Technologies) by John Chambers and colleagues. R can be considered as a different implementation of S. There are some important differences, but much code written for S runs unaltered under R.</p>
+
+          <p>R provides a wide variety of statistical (linear and nonlinear modelling, classical statistical tests, time-series analysis, classification, clustering, …) and graphical techniques, and is highly extensible. The S language is often the vehicle of choice for research in statistical methodology, and R provides an Open Source route to participation in that activity.</p>
+
+          <p>One of R’s strengths is the ease with which well-designed publication-quality plots can be produced, including mathematical symbols and formulae where needed. Great care has been taken over the defaults for the minor design choices in graphics, but the user retains full control.</p>
+
+          <p>R is available as Free Software under the terms of the Free Software Foundation’s GNU General Public License in source code form. It compiles and runs on a wide variety of UNIX platforms and similar systems (including FreeBSD and Linux), Windows and MacOS.</p>
+
+        </article>
+
+      </section>
+
+      <section class="main-section" id="qif">
+        <header>qif</header>
+        <article>
+          <p>Developed to perform the estimation and inference for regression coefficient parameters in longitudinal marginal models using the method of quadratic inference functions. Like generalized estimating equations, this method is also a quasi-likelihood inference method. It has been showed that the method gives consistent estimators of the regression coefficients even if the correlation structure is misspecified, and it is more efficient than GEE when the correlation structure is misspecified. Based on Qu, A., Lindsay, B.G. and Li, B. (2000) <doi:10.1093/biomet/87.4.823>.</p>
+
+          <p>Like generalized estimating equations (GEE), QIF is also a quasilikelihood inference method. It has been showed that</p>
+          <ol>
+            <li>QIF gives consistent estimators of the regression coefficients even if the correlation structure is misspecified. GEE has the same property.</li>
+            <li>QIF estimators are of the same efficiency as GEE estimators when the correlation structure is correctly specified, but more efficient when the correlation structure is misspecified.</li>
+            <li>QIF gives a goodness-of-fit test for the validity of the first moment assumption pertaining to the unbiasedness of inference function. This assumption is crucial to ensure the consistency in estimation. GEE cannot provide this test.</li>
+            <li>QIF is robust against a small portion of outliers/contaminated data; refer to Qu, A. and Song, P. (2004), “Assessing robustness of generalised estimating equations and quadratic inference functions”, Biometrika, 91, 447-459.</li>
+            <li>QIF is analogous to -2*log-likelihood, so it enables naturally to define some model selection criteria, such as Akaike Information Criterion (AIC) and Bayes Information Criterion (BIC).</li>
+          </ol>
+
+          <p>You can install the released version of qif from CRAN with:</p>
+          <code class="chunk">
+            install.packages("qif")
+          </code>
+
+          <p>Or install the development version from Github with:</p>
+          <code class="chunk">
+            install.packages("devtools") 
+            # you need devtools to install 
+            packages from Github
+            
+            devtools::install_github("umich-biostatistics/qif")
+          </code>
+        </article>
+      </section>
+
+      <section class="main-section" id="vctrs">
+        <header>vctrs</header>
+        <article>
+          <p>Defines new notions of prototype and size that are used to provide tools for consistent and well-founded type-coercion and size-recycling, and are in turn connected to ideas of type- and size-stability useful for analyzing function interfaces.</p>
+
+          <p>There are three main goals to the vctrs package, each described in a vignette:</p>
+          <ul>
+            <li>To propose <code>vec_size()</code> and <code>vec_type()</code> as alternatives to <code>length()</code> and <code>class()</code>; <code>vignette("type-size")</code>. These definitions are paired with a framework for type-coercion and size-recycling.</li>
+
+            <li>To define type- and size-stability as desirable function properties, use them to analyse existing base function, and to propose better alternatives; <code>vignette("stability")</code>. This work has been particularly motivated by thinking about the ideal properties of <code>c()</code>, <code>ifelse()</code>, and <code>rbind()</code>.</li>
+
+            <li>To provide a new <code>vctr</code> base class that makes it easy to create new S3 vectors; <code>vignette("s3-vector")</code>. vctrs provides methods for many base generics in terms of a few new vctrs generics, making implementation considerably simpler and more robust.</li>
+          </ul>
+        </article>
+      </section>
+
+
+      <section class="main-section" id="ggplot2">
+        <header>ggplot2</header>
+        <article>
+          <p>A system for 'declaratively' creating graphics, based on "The Grammar of Graphics". You provide the data, tell 'ggplot2' how to map variables to aesthetics, what graphical primitives to use, and it takes care of the details.</p>
+
+          <code class="chunk">
+              # The easiest way to get ggplot2 is to install the whole tidyverse:
+              install.packages("tidyverse")
+
+              # Alternatively, install just ggplot2:
+              install.packages("ggplot2")
+
+              # Or the the development version from GitHub:
+              # install.packages("devtools")
+              devtools::install_github("tidyverse/ggplot2")
+          </code>
+
+          <p>It’s hard to succinctly describe how ggplot2 works because it embodies a deep philosophy of visualisation. However, in most cases you start with <code>ggplot()</code>, supply a dataset and aesthetic mapping (with <code>aes()</code>). You then add on layers (like <code>geom_point()</code> or <code>geom_histogram()</code>), scales (like <code>scale_colour_brewer()</code>), faceting specifications (like <code>facet_wrap()</code>) and coordinate systems (like <code>coord_flip()</code>).</p>
+
+          <code class="chunk">
+            library(ggplot2)
+
+            ggplot(mpg, aes(displ, hwy, colour = class)) + 
+              geom_point()
+          </code>
+          <div class="img">
+              <img src="https://github.com/tidyverse/ggplot2/blob/master/man/figures/README-example-1.png?raw=true">
+          </div>
+        </article>
+      </section>
+
+
+      <section class="main-section" id="tidyverse">
+        <header>tidyverse</header>
+        <article>
+          <p>The 'tidyverse' is a set of packages that work in harmony because they share common data representations and 'API' design. This package is designed to make it easy to install and load multiple 'tidyverse' packages in a single step. Learn more about the 'tidyverse' at <<a href="https://tidyverse.org">https://tidyverse.org</a>>.</p>
+
+          <code class="chunk">
+            # Install from CRAN
+            install.packages("tidyverse")
+
+            # Or the development version from GitHub
+            # install.packages("devtools")
+            devtools::install_github("hadley/tidyverse")
+          </code>
+
+          <p><code>library(tidyverse)</code> will load the core tidyverse packages:</p>
+
+          <ul>
+            <li>ggplot2, for data visualisation.</li>
+            <li>dplyr, for data manipulation.</li>
+            <li>tidyr, for data tidying.</li>
+            <li>readr, for data import.</li>
+            <li>purrr, for functional programming.</li>
+            <li>tibble, for tibbles, a modern re-imagining of data frames.</li>
+          </ul>
+
+          <p>You also get a condensed summary of conflicts with other packages you have loaded:</p>
+
+          <code class="chunk">
+              library(tidyverse)
+              #> Loading tidyverse: ggplot2
+              #> Loading tidyverse: tibble
+              #> Loading tidyverse: tidyr
+              #> Loading tidyverse: readr
+              #> Loading tidyverse: purrr
+              #> Loading tidyverse: dplyr
+              #> Conflicts with tidy packages ----------------------------------------------
+              #> filter(): dplyr, stats
+              #> lag():    dplyr, stats
+          </code>
+
+          <p>You can see conflicts created later with <code>tidyverse_conflicts()</code>:</p>
+          <code class="chunk">
+              library(MASS)
+              #> 
+              #> Attaching package: 'MASS'
+              #> The following object is masked from 'package:dplyr':
+              #> 
+              #>     select
+              tidyverse_conflicts()
+              #> Conflicts with tidy packages ----------------------------------------------
+              #> filter(): dplyr, stats
+              #> lag():    dplyr, stats
+              #> select(): dplyr, MASS
+          </code>
+
+          <p>And you can check that all tidyverse packages are up-to-date with <code>tidyverse_update()</code>:</p>
+
+          <code class="chunk">
+              tidyverse_update()
+              #> The following packages are out of date:
+              #>  * broom (0.4.0 -> 0.4.1)
+              #>  * DBI   (0.4.1 -> 0.5)
+              #>  * Rcpp  (0.12.6 -> 0.12.7)
+              #> Update now?
+              #> 
+              #> 1: Yes
+              #> 2: No
+          </code>
+        </article>
+      </section>
+
+
+      <section class="main-section" id="Reference">
+        <header>Reference</header>
+        <ul>
+          <li>What is R? Visit:<a href="https://www.r-project.org/about.html">https://www.r-project.org/about.html</a>.</li>
+          <li><a href="https://www.rdocumentation.org/">R Documentation</a></li>
+        </ul>
+      </section>
+      
+    </main>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  </body>
+</html>
